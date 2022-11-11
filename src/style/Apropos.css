@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+.banner-a-propos {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    margin: 0 5%;
+    background: url("../assets/background-a-propos.png") no-repeat center;
+    background-size: cover;
+    border-radius: 25px;
+}
+.banner-a-propos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0.3;
+    border-radius: 25px;
+}
+
+@media (max-width: 767px) {
+    .banner-a-propos {
+        margin: 0 3%;
+        border-radius: 10px;
+    }
+    .banner-a-propos::before {
+        border-radius: 10px;
+    }
+}

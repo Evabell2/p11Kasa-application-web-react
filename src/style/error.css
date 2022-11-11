@@ -1,0 +1,40 @@
+.error_404 h1 {
+    margin: 0;
+    font-size: 288px;
+    color: #FF6060;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+.error_404 h2 {
+    margin-bottom: 8%;
+    font-size: 36px;
+    color: #FF6060;
+    font-family: 'montserrat', sans-serif;
+    font-weight: 500;
+}
+.error_404 {
+    margin: 3% 0;
+    text-align: center;
+}
+.error_404 a {
+    font-size: 18px;
+    color: #FF6060;
+    font-family: 'montserrat', sans-serif;
+    font-weight: 500;
+}
+@media (max-width: 767px) {
+    .error_404 {
+        margin: 10% 0;
+    }
+}
+@media (max-width: 479px) {
+    .error_404 {
+        margin: 48% 0;
+    }
+    h1 {
+        font-size: 96px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+}
