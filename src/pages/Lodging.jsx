@@ -11,8 +11,9 @@ import { FaStar } from "react-icons/fa"
 function Lodging() {
 
     const param = useParams()
-    const [logement, setLogement] = useState(logements.find((item) => item.id === param.id))
+    const [logement] = useState(logements.find((item) => item.id === param.id))
     const [selected, setSelected] = useState(false)
+    const [selected2, setSelected2] = useState(false)
 
     const starColor = {
         grey: "#E3E3E3",
@@ -57,35 +58,64 @@ function Lodging() {
                         </ul>
                     </div>
 
-                    <div className='collapse_desc_equip'>
+                    <div className='les_collapses'>
 
-                        <ul className='collapse collapse_logement'>
-                            <li>
-                                <div onClick={() => setSelected(true) } className="collapseOpen">
-                                    <h2>Équipements</h2>
-                                    {selected ? (
-                                        <img src={chevronOpen} alt="chevron" />
-                                        ) : (
-                                        <img src={chevronClose} alt="chevron" />
-                                    )}
-                                </div>
-                                <div onClick={() => setSelected(false) } className={selected ? 'collapseClose zindex' : 'collapseClose'}>
-                                    <h2>Équipements</h2>
-                                    {selected ? (
-                                        <img src={chevronOpen} alt="chevron" />
-                                        ) : (
-                                        <img src={chevronClose} alt="chevron" />
-                                    )}
-                                </div>
+                        <div className='collapse_desc_description'>
+                            <ul className='collapse collapse_logement'>
+                                <li>
+                                    <div onClick={() => setSelected2(true) } className="collapseOpen">
+                                        <h2>Description</h2>
+                                        {selected2 ? (
+                                            <img src={chevronOpen} alt="chevron" />
+                                            ) : (
+                                            <img src={chevronClose} alt="chevron" />
+                                        )}
+                                    </div>
+                                    <div onClick={() => setSelected2(false) } className={selected2 ? 'collapseClose zindex' : 'collapseClose'}>
+                                        <h2>Description</h2>
+                                        {selected2 ? (
+                                            <img src={chevronOpen} alt="chevron" />
+                                            ) : (
+                                            <img src={chevronClose} alt="chevron" />
+                                        )}
+                                    </div>
 
-                                <ul className={selected ? 'content show' : 'content'}>
-                                    {(logement.equipments).map(equip => (
-                                        <li>{equip}</li>
-                                    ))}
-                                </ul>
-                            </li>
-                        </ul>
+                                    <ul className={selected2 ? 'content show' : 'content'}>
+                                        <li>{logement.description}</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
 
+                        <div className='collapse_desc_equip'>
+                            <ul className='collapse collapse_logement'>
+                                <li>
+                                    <div onClick={() => setSelected(true) } className="collapseOpen">
+                                        <h2>Équipements</h2>
+                                        {selected ? (
+                                            <img src={chevronOpen} alt="chevron" />
+                                            ) : (
+                                            <img src={chevronClose} alt="chevron" />
+                                        )}
+                                    </div>
+                                    <div onClick={() => setSelected(false) } className={selected ? 'collapseClose zindex' : 'collapseClose'}>
+                                        <h2>Équipements</h2>
+                                        {selected ? (
+                                            <img src={chevronOpen} alt="chevron" />
+                                            ) : (
+                                            <img src={chevronClose} alt="chevron" />
+                                        )}
+                                    </div>
+
+                                    <ul className={selected ? 'content show' : 'content'}>
+                                        {(logement.equipments).map(equip => (
+                                            <li>{equip}</li>
+                                        ))}
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
                     </div>
                 </div>
             )}

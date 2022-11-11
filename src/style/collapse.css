@@ -29,6 +29,19 @@ ul.collapse img {
     height: 100%;
     margin-right: 15px;
 }
+ul.collapse ul {
+    padding: 10px 20px;
+}
+ul.collapse ul li {
+    margin-bottom: 0 !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FF6060;
+}
+
+
 ul.collapse p.content {
     padding: 10px 20px;
     font-family: 'Montserrat', sans-serif;
@@ -41,8 +54,11 @@ ul.collapse p.content {
 ul.collapse p.show {
     display: block;
 }
+
+
+
 ul.collapse ul.content {
-    padding: 10px 20px;
+    padding: 30px 20px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 24px;
@@ -53,14 +69,29 @@ ul.collapse ul.content {
 ul.collapse ul.show {
     display: block;
 }
-ul.collapse ul {
-    padding: 10px 20px;
+
+
+
+
+ul.collapse_logement {
+    margin: 10px 0;
+    padding-left: 0;
 }
-ul.collapse ul li {
-    margin-bottom: 0 !important;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 25px;
-    color: #FF6060;
+ul.collapse_logement li {
+    position: relative;
+}
+
+div.collapseClose {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+div.collapseClose.zindex {
+    height: auto;
+    z-index: 1;
+}
+ul.collapse_logement ul.content{
+    min-height: 250px;
 }
