@@ -6,6 +6,8 @@ import "../style/collapse.css"
 import chevronOpen from "../assets/vector-close.svg"
 import chevronClose from "../assets/vector-open.svg"
 import { FaStar } from "react-icons/fa"
+import arrowPrev from '../assets/arrow-prev.svg'
+import arrowNext from '../assets/arrow-next.svg'
 
 
 function Lodging() {
@@ -27,9 +29,15 @@ function Lodging() {
                 <div className='body_logement'>
 
                     <div className='galerie'>
+
+                        <button className='btn_prev'><img src={arrowPrev} alt="" /></button>
+
                         {(logement.pictures).map(i => (
                             <img src={i} alt="photos" />
                         ))}
+
+                        <button className='btn_next'><img src={arrowNext} alt="" /></button>
+
                     </div>
 
                     <div className='presentation'>
