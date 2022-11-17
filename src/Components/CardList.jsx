@@ -1,8 +1,7 @@
-import logements from "../data/logements.json"
 import Card from "../Components/Card"
 import { Link } from "react-router-dom"
 
-function CardList() {
+function CardList({logements}) {
     return (
         <ul className='card-list'>
             {logements.map(({ id, title, cover }) => (

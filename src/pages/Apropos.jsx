@@ -1,53 +1,27 @@
 import "../style/collapse.css"
 import "../style/Apropos.css"
-import chevronOpen from "../assets/vector-close.svg"
-import chevronClose from "../assets/vector-open.svg"
-import { useState } from 'react'
+import Collapse from "../Components/Collapse"
 
 
-function Apropos() {
 
-  const [selected, setSelected] = useState(null)
-
-  const handleClick = (i) => {
-    if (selected === i) {
-      return setSelected(null)
-    }
-
-    setSelected(i)
-  }
-  
+function Apropos() { 
   return (
     <section>
       <div className='banner-a-propos'></div>
-
       <ul className="collapse">
-
         {dataCollapse.map((item, i) => (
-          <li>
-
-            <div onClick={() => handleClick(i)}>
-              <h2>{item.Sujet}</h2>
-              <div>
-                {selected === i ? (
-                  <img src={chevronOpen} alt="chevron" />
-                  ) : (
-                    <img src={chevronClose} alt="chevron" />
-                  )}
-              </div>
-            </div>
-
-            <p className={selected === i ? 'content show' : 'content'}>{item.descriptif}</p>
-
-          </li>
+          <Collapse
+            item={item}
+            i={i}
+          />
         ))}
-
       </ul>
     </section>
   )
 }
-  
 export default Apropos
+
+
 
 const dataCollapse = [
   {

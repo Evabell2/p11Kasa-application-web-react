@@ -1,4 +1,3 @@
-
 function Card({ cover, title }) {
 	return (
 		<li className='card'>
@@ -7,5 +6,4 @@ function Card({ cover, title }) {
 		</li>
 	)
 }
-
 export default Card

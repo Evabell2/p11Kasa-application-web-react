@@ -1,5 +1,6 @@
 ul.collapse {
     margin: 3% 10%;
+    padding-left: 0;
 }
 ul.collapse li {
     list-style-type: none;

@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
-import logements from "../data/logements.json"
 import '../style/Lodging.css'
 import "../style/collapse.css"
 import chevronOpen from "../assets/vector-close.svg"
@@ -10,10 +9,11 @@ import arrowPrev from '../assets/arrow-prev.svg'
 import arrowNext from '../assets/arrow-next.svg'
 
 
-function Lodging() {
+function Lodging({logements}) {
 
     const param = useParams()
     const [logement] = useState(logements.find((item) => item.id === param.id))
+
     const [selected, setSelected] = useState(false)
     const [selected2, setSelected2] = useState(false)
 
@@ -22,6 +22,14 @@ function Lodging() {
         pink: "#FF6060"
     }
     const stars = Array(5).fill(0)
+
+    const [diapoIndex, setDiapoIndex] = useState(0)
+    const goNext = () => {
+        setDiapoIndex((diapoIndex+1)%logement.pictures.length)
+    }
+    const goPrev = () => {
+        setDiapoIndex(diapoIndex > 0 ? diapoIndex - 1 : logement.pictures.length - 1)
+    }
         
     return (
         <div>
@@ -29,15 +37,14 @@ function Lodging() {
                 <div className='body_logement'>
 
                     <div className='galerie'>
+                        <button onClick={goPrev} className='btn_prev'><img src={arrowPrev} alt="" /></button>
 
-                        <button className='btn_prev'><img src={arrowPrev} alt="" /></button>
+                            <div className='divImg'>
+                                <img src={logement.pictures[diapoIndex]} alt=""/>                        
+                                <div className='iteration'>{diapoIndex+1}/{(logement.pictures).length}</div>
+                            </div>
 
-                        {(logement.pictures).map(i => (
-                            <img src={i} alt="photos" />
-                        ))}
-
-                        <button className='btn_next'><img src={arrowNext} alt="" /></button>
-
+                        <button onClick={goNext} className='btn_next'><img src={arrowNext} alt="" /></button>
                     </div>
 
                     <div className='presentation'>

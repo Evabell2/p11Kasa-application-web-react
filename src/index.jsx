@@ -9,6 +9,8 @@ import Lodging from "./pages/Lodging"
 
 import Header from "./Components/Header"
 import Footer from "./Components/Footer"
+import logements from "./data/logements.json"
+
 
  
 ReactDOM.render(
@@ -17,10 +19,10 @@ ReactDOM.render(
         <Header />
 
         <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Home logements={logements} />} />
             <Route path='/a-propos' element={<Apropos />} />
             <Route path="*" element={<Error404 />} />
-            <Route path="/logement/:id" element={<Lodging />} />
+            <Route path="/logement/:id" element={<Lodging logements={logements} />} />
         </Routes>
 
         <Footer />
