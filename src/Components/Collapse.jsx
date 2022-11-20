@@ -2,7 +2,7 @@ import { useState } from 'react'
 import chevronOpen from "../assets/vector-close.svg"
 import chevronClose from "../assets/vector-open.svg"
 
-function Collapse({ i, item }) {
+function Collapse({ i, item}) {
 
     const [selected, setSelected] = useState(null)
   
@@ -12,12 +12,10 @@ function Collapse({ i, item }) {
       }
       setSelected(i)
     }
-    
     return (
         <li>
             <div onClick={() => handleClick(i)}>
                 <h2>{item.Sujet}</h2>
-                <h2>{item.titleDescription}</h2>
                 <div>
                     {selected === i ? (
                     <img src={chevronOpen} alt="chevron" />
@@ -29,5 +27,5 @@ function Collapse({ i, item }) {
             <p className={selected === i ? 'content show' : 'content'}>{item.descriptif}</p>
         </li>
     )
-  }
+}
   export default Collapse

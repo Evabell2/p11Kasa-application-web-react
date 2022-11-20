@@ -37,14 +37,14 @@ function Lodging({logements}) {
                 <div className='body_logement'>
 
                     <div className='galerie'>
-                        <button onClick={goPrev} className='btn_prev'><img src={arrowPrev} alt="" /></button>
+                        <button onClick={goPrev} className={logement.pictures.length === 1 ? 'btn_none' : 'btn_prev'}><img src={arrowPrev} alt="" /></button>
 
                             <div className='divImg'>
                                 <img src={logement.pictures[diapoIndex]} alt=""/>                        
                                 <div className='iteration'>{diapoIndex+1}/{(logement.pictures).length}</div>
                             </div>
 
-                        <button onClick={goNext} className='btn_next'><img src={arrowNext} alt="" /></button>
+                        <button onClick={goNext} className={logement.pictures.length === 1 ? 'btn_none' : 'btn_next'}><img src={arrowNext} alt="" /></button>
                     </div>
 
                     <div className='presentation'>
@@ -52,22 +52,25 @@ function Lodging({logements}) {
                             <h1>{logement.title}</h1>
                             <span>{logement.location}</span>
                         </div>
+                        <ul className='list_tags'>
+                            {(logement.tags).map(tag => (
+                                <li key={tag.toString()}>{tag}</li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div className='portrait_star'>
                         <div className='portrait'>
                             <span>{(logement.host).name}</span>
                             <img src={(logement.host).picture} alt="portrait" />
                         </div>
-                    </div>
-
-                    <div className='tag_and_start'>
-                        <ul className='list_tags'>
-                            {(logement.tags).map(tag => (
-                                <li>{tag}</li>
-                            ))}
-                        </ul>
                         <ul className='list_start'>
                             {stars.map((_, index) => (
                                 <li >
-                                    <FaStar key={index} color={logement.rating > index ? starColor.pink : starColor.grey} />
+                                    <FaStar 
+                                        color={logement.rating > index ? starColor.pink : starColor.grey}
+                                        key={index}
+                                        />
                                 </li>
                             ))}
                         </ul>
@@ -77,7 +80,7 @@ function Lodging({logements}) {
 
                         <div className='collapse_desc_description'>
                             <ul className='collapse collapse_logement'>
-                                <li>
+                                <li key={logement.id}>
                                     <div onClick={() => setSelected2(true) } className="collapseOpen">
                                         <h2>Description</h2>
                                         {selected2 ? (
@@ -96,7 +99,7 @@ function Lodging({logements}) {
                                     </div>
 
                                     <ul className={selected2 ? 'content show' : 'content'}>
-                                        <li>{logement.description}</li>
+                                        <li key={logement.description.toString()}>{logement.description}</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -104,7 +107,7 @@ function Lodging({logements}) {
 
                         <div className='collapse_desc_equip'>
                             <ul className='collapse collapse_logement'>
-                                <li>
+                                <li key={logement.id}>
                                     <div onClick={() => setSelected(true) } className="collapseOpen">
                                         <h2>Équipements</h2>
                                         {selected ? (
@@ -124,7 +127,7 @@ function Lodging({logements}) {
 
                                     <ul className={selected ? 'content show' : 'content'}>
                                         {(logement.equipments).map(equip => (
-                                            <li>{equip}</li>
+                                            <li key={equip.toString()}>{equip}</li>
                                         ))}
                                     </ul>
                                 </li>

@@ -13,6 +13,7 @@ function Apropos() {
           <Collapse
             item={item}
             i={i}
+            key={i}
           />
         ))}
       </ul>

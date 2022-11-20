@@ -26,15 +26,19 @@
     .error_404 {
         margin: 10% 0;
     }
+    h1 {
+        font-size: 200px !important;
+    }
 }
 @media (max-width: 479px) {
     .error_404 {
         margin: 48% 0;
     }
     h1 {
-        font-size: 96px;
+        font-size: 96px !important;
     }
     h2 {
-        font-size: 18px;
+        margin-bottom: 30% !important;
+        font-size: 18px !important;
     }
 }

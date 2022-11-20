@@ -20,6 +20,11 @@ header a:first-of-type {
 header a:hover, header a:active {
     text-decoration: underline;
 }
+@media (max-width: 1200px) {
+    header {
+        margin: 3% 30px;
+    }
+}
 @media (max-width: 767px) {
     header nav {
         gap: 30px !important;
@@ -29,6 +34,9 @@ header a:hover, header a:active {
     }
 }
 @media (max-width: 479px) {
+    header {
+        margin: 3% 10px;
+    }
     header>a {
         width: 40%;
     }

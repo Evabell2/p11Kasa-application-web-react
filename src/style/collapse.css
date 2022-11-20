@@ -41,8 +41,6 @@ ul.collapse ul li {
     line-height: 25px;
     color: #FF6060;
 }
-
-
 ul.collapse p.content {
     padding: 10px 20px;
     font-family: 'Montserrat', sans-serif;
@@ -55,9 +53,6 @@ ul.collapse p.content {
 ul.collapse p.show {
     display: block;
 }
-
-
-
 ul.collapse ul.content {
     padding: 30px 20px;
     font-family: 'Montserrat', sans-serif;
@@ -70,10 +65,6 @@ ul.collapse ul.content {
 ul.collapse ul.show {
     display: block;
 }
-
-
-
-
 ul.collapse_logement {
     margin: 10px 0;
     padding-left: 0;
@@ -81,7 +72,6 @@ ul.collapse_logement {
 ul.collapse_logement li {
     position: relative;
 }
-
 div.collapseClose {
     position: absolute;
     top: 0;
@@ -95,4 +85,40 @@ div.collapseClose.zindex {
 }
 ul.collapse_logement ul.content{
     min-height: 250px;
+}
+@media (max-width: 980px) {
+    ul.collapse p.content {
+        font-size: 18px;
+    }
+    ul.collapse h2 {
+        font-size: 20px;
+    }
+}
+@media (max-width: 768px) {
+    ul.collapse_logement ul.content{
+        min-height: 100%;
+    }
+    .collapse {
+        margin: 30px !important;
+    }
+}
+@media (max-width: 479px) {
+    .collapse {
+        margin: 30px 10px !important;
+    }
+    ul.collapse h2 {
+        margin-bottom: 15px !important;
+        font-size: 16px !important;
+    }
+    ul.collapse li {
+        margin-bottom: 20px !important;
+    }
+    ul.collapse p.content {
+        margin-top: 10px !important;
+        font-size: 14px;
+        line-height: 17px;
+    }
+    ul.collapse img {
+        width: 15px;
+    }
 }
