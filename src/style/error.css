@@ -26,7 +26,7 @@
     .error_404 {
         margin: 10% 0;
     }
-    h1 {
+    .error_404 h1 {
         font-size: 200px !important;
     }
 }
@@ -34,10 +34,10 @@
     .error_404 {
         margin: 48% 0;
     }
-    h1 {
+    .error_404 h1 {
         font-size: 96px !important;
     }
-    h2 {
+    .error_404 h2 {
         margin-bottom: 30% !important;
         font-size: 18px !important;
     }

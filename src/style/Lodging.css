@@ -228,4 +228,15 @@
         flex-direction: column;
         gap: 0;
     }
+    .collapse_logement {
+        margin: 10px 0 !important;
+    }
+}
+@media (max-width: 479px) {
+    .collapse_logement {
+        margin: 0 !important;
+    }
+    .les_collapses {
+        margin-top: 20px;
+    }
 }
