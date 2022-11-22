@@ -10,7 +10,6 @@ import arrowNext from '../assets/arrow-next.svg'
 
 
 function Lodging({logements}) {
-
     const param = useParams()
     const [logement] = useState(logements.find((item) => item.id === param.id))
 
@@ -66,11 +65,8 @@ function Lodging({logements}) {
                         </div>
                         <ul className='list_start'>
                             {stars.map((_, index) => (
-                                <li >
-                                    <FaStar 
-                                        color={logement.rating > index ? starColor.pink : starColor.grey}
-                                        key={index}
-                                        />
+                                <li key={index}>
+                                    <FaStar color={logement.rating > index ? starColor.pink : starColor.grey}/>
                                 </li>
                             ))}
                         </ul>
